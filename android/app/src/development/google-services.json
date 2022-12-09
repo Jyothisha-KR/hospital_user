@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "982859130920",
+    "project_id": "hospital-user-c6eb9",
+    "storage_bucket": "hospital-user-c6eb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982859130920:android:d301f3c3fb7a2dfde1ad1d",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.hospital_user.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982859130920-vafm9r0o6tlar1j16cpjfqifg9f9sle6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJgZsSRHn4gTuxOOogTzkg_hgo1OEniqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982859130920-vafm9r0o6tlar1j16cpjfqifg9f9sle6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

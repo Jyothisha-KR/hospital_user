@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:hospital_user/home/view/widgets/home_body.dart';
+import 'package:hospital_user/home/widgets/home_body.dart';
 import 'package:hospital_user/login/login.dart';
 import 'package:hospital_user/patient/patient.dart';
 
@@ -11,53 +11,70 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.only(top: 350, left: 10, right: 10),
-          child: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              crossAxisSpacing: 30,
-              mainAxisSpacing: 50,
-              childAspectRatio: 2 / 3,
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 40),
+              child: Text(
+                'Login As',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25),
+                textAlign: TextAlign.center,
+              ),
             ),
-            children: [
-              InkWell(
-                onTap: (() {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginPage(),
-                    ),
-                  );
-                }),
-                child: InkWell(
-                  child: HomeBodyWidget(
+            SizedBox(
+              height: 250,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 500),
+              child: Row(
+                children: [
+                  HomeBodyWidget(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ),
+                      );
+                    },
                     image: 'assets/images/doc.webp',
                     text: 'Doctor',
+                    height: 150,
+                    width: 120,
                   ),
-                ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  HomeBodyWidget(
+                    height: 150,
+                    width: 120,
+                    text: 'patient',
+                    image: 'assets/images/p.webp',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginPage(),
+                          ));
+                    },
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  HomeBodyWidget(
+                    height: 150,
+                    width: 120,
+                    image: 'assets/images/rec.png',
+                    onTap: () {},
+                    text: 'Receptionist',
+                  )
+                ],
               ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ));
-                },
-                child: HomeBodyWidget(
-                  image: 'assets/images/p.webp',
-                  text: 'Patient',
-                ),
-              ),
-              InkWell(
-                child: HomeBodyWidget(
-                  image: 'assets/images/rec.png',
-                  text: 'Receptionist',
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
